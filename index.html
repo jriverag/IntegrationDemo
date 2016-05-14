@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>IS 630 Demostration Application</title>
+    <link rel="stylesheet" type="text/css" href="styles/demostyle.css" />
+    <script src="js/demoscripts.js"></script>
+</head>
+
+<body>
+    <h1>Demostration Application</h1>
+    <hr>
+    <section id="menu">
+        <select onchange="MenuSelect(value)" id="menuitems">
+            <option>Please Select an Item</option>
+            <option value="About">About</option>
+            <option value="List Authors">List Authors</option>
+            <option value="Store List">Store List</option>
+            <option value="Employee List">Employee List</option>
+            <option value="Author Publications">Author Publications</option>
+            <option value="Update Store Information">Update Store Information</option>
+            <option value="Add a Store">Add a Store</option>
+            <option value="Add an Employee">Add an Employee</option>
+            <option value="Change an Employee Name">Change an Employee Name</option>
+            <option value="Delete an Employee">Delete an Employee</option>
+            <option value="Delete a Store">Delete a Store</option>
+            <option value="Store Orders">Store Orders</option>
+        </select>
+        <hr>
+    </section>
+    <section id="about">
+        <h3>Demonstration Application</h3>
+        <p>This is a demonstration application for the IS 633 & IS 491 class.</p>
+        <br>
+        <img src="images/self.jpg">
+    </section>
+    <section id="history">
+        <input type="text" id="historyid">
+        <button onclick="History()" id="CustOrders">Author Publications</button>
+        <br>
+        <label id="custhist">Author Publications will display here.</label>
+    </section>
+    <section id="orders">
+        <input type="text" id="orderid">
+        <button onclick="Orders('news')">Store Orders</button>
+        <br>
+        <label id="orderlist">Store orders will display here.</label>
+    </section>
+    <section id="add">
+        <h3>Add a Store</h3>
+        <br>
+        <table><tr><th>New Store Data</th></tr>
+        <tr><td class="caption">Please enter the Store ID:</td>
+        <td><input type="text" id="custid"></td>
+        <td><label class="warning">The Store ID is four digit number.</label></td></tr>
+        <tr>
+        <td class="caption">Please enter the Store Name:</td>
+        <td><input type="text" id="custname"></td>
+        </tr>
+        <tr>
+        <td class="caption">Please enter the Store City:</td>
+        <td><input type="text" id="custcity"></td>
+        </tr>
+        <tr>
+        <td><button onclick="CreateStore()">Add a New Store</button></td>
+        </tr>
+        </table>    
+        <label id="result">The result will display here.</label>
+    </section>
+    <section id="change">
+        <h3>Update a Store's Information</h3>
+        <hr>
+        <table>
+            <tr>
+                <td class="caption">
+                    <label>Store ID</label>
+                </td>
+                <td>
+                    <input type="text" id="orderID">
+                </td>
+            </tr>
+            <tr>
+                <td class="caption">
+                    <label>Updated Store Name</label>
+                </td>
+                <td>
+                    <input type="text" id="shipName">
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="caption">
+                    <label>Updated Store City</label>
+                </td>
+                <td>
+                    <input type="text" id="shipCity">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="StoreUpdate()" id="update">Update Shipping Address</button>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <label id="changeresult">The operation's result will display here.</label>
+    </section>
+    <section id="delete">
+        <h3>Delete a Store</h3>
+        <br>
+        <table>
+            <tr>
+                <td class="caption">
+                    Please enter the Store ID for the Store you wish to delete:
+                </td>
+                <td>
+                    <input type="text" id="deleteid">
+                </td>
+            </tr>
+            <tr>
+                <td class="warning">
+                    Deletion is a final action and will permanently delete a customer's data!
+                </td>
+                <td>
+                    <button onclick="DeleteStore()">Delete Store</button>
+                </td>
+            </tr>
+        </table>
+        <label id="deleteresult">The result will display here.</label>
+    </section>
+    <section id="list">
+        <h3>List Authors</h3>
+        <button onclick="ListCustomers()">List Authors</button>
+        <hr>
+        <p id="listcustomers">Author List</p>
+    </section>
+    <section id="storelist">
+        <h3>List Stores</h3>
+        <button onclick="ListStores()">List Stores</button>
+        <hr>
+        <p id="liststores">Store List</p>
+    </section>
+    <section id="employeelist">
+        <h3>List Employees</h3>
+        <button onclick="ListEmployees()">List Employees</button>
+        <hr>
+        <p id="listemployees">Employee List</p>
+    </section>
+        <section id="addemployee">
+        <h3>Add an Employee</h3>
+        <br>
+        <table><tr><th>New Employee Data</th></tr>
+        <tr><td class="caption">Please enter the Employee ID:</td>
+        <td><input type="text" id="empid"></td>
+        <td><label class="warning">The Employee ID is nine digit number.</label></td></tr>
+        <tr>
+        <td class="caption">Please enter the Employee First Name:</td>
+        <td><input type="text" id="empfname"></td>
+        </tr>
+        <tr>
+        <td class="caption">Please enter the Employee Middle Initial:</td>
+        <td><input type="text" id="empminit"></td>
+        </tr>
+        <tr>
+        <td class="caption">Please enter the Employee Last Name:</td>
+        <td><input type="text" id="emplname"></td>
+        </tr>
+        <tr>
+        <td><button onclick="CreateEmployee()">Add a New Employee</button></td>
+        </tr>
+        </table>    
+        <label id="empresult">The result will display here.</label>
+    </section>
+        <section id="changeemployee">
+        <h3>Update an Employee's Name</h3>
+        <hr>
+        <table>
+            <tr>
+                <td class="caption">
+                    <label>Employee ID</label>
+                </td>
+                <td>
+                    <input type="text" id="empID">
+                </td>
+            </tr>
+            <tr>
+                <td class="caption">
+                    <label>Updated Employee First Name</label>
+                </td>
+                <td>
+                    <input type="text" id="empFName">
+                </td>
+            </tr>
+            
+            <tr>
+                <td class="caption">
+                    <label>Updated Employee Middle Initial</label>
+                </td>
+                 <td>
+                    <input type="text" id="empmi">
+                </td>
+            </tr>
+            <tr>
+                <td class="caption">
+                    <label>Updated Employee Last Name</label>
+                </td>
+                <td>
+                    <input type="text" id="empLName">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button onclick="EmployeeUpdate()" id="update">Update Employee Name</button>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <label id="empchangeresult">The operation's result will display here.</label>
+    </section>
+            <section id="deleteemployee">
+        <h3>Delete an Employee</h3>
+        <br>
+        <table>
+            <tr>
+                <td class="caption">
+                    Please enter the Employee ID for the Employee you wish to delete:
+                </td>
+                <td>
+                    <input type="text" id="deleteempid">
+                </td>
+            </tr>
+            <tr>
+                <td class="warning">
+                    Deletion is a final action and will permanently delete an employee's data!
+                </td>
+                <td>
+                    <button onclick="DeleteEmployee()">Delete Employee</button>
+                </td>
+            </tr>
+        </table>
+        <label id="deleteemployeeresult">The result will display here.</label>
+    </section>
+
+
+</body>
+</html>
