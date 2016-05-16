@@ -212,17 +212,21 @@ function OperationResult(success, exception, displayObject)
     switch (success)
     {
         case 1:
-            displayObject.innerHTML = "The operation was successful!";
+            //displayObject.innerHTML = "The operation was successful!";
+            alert("The operation was successful");
             MenuSelect("Store List");
             break;
         case 0:
-            displayObject.innerHTML = "The operation was not successful:<br>" + exception;
+            //displayObject.innerHTML = "The operation was not successful:<br>" + exception;
+            alert("The operation was not successful:\ "+ exception);
             break;
         case -2:
-            displayObject.innerHTML = "The operation was not successful because the data string supplied could not be deserialized into the service object.";
+            alert("The operation was not successful because the data string supplied could not be deserialized into the service object.");
+            //displayObject.innerHTML = "The operation was not successful because the data string supplied could not be deserialized into the service object.";
             break;
         case -3:
-            displayObject.innerHTML = "The operation was not successful because a record with the supplied Order ID could not be found";
+            //displayObject.innerHTML = "The operation was not successful because a record with the supplied Order ID could not be found";
+            alert("The operation was not successful because a record with the supplied Order ID could not be found");
             break;
         default:
             alert("The operation code returned is not identifiable.");
@@ -231,6 +235,11 @@ function OperationResult(success, exception, displayObject)
 
 function DeleteStore(storeid)
        {
+            var deleteconfirm = confirm("Deleting is an irrevocable action! \nPress OK if you want to continue.");
+            if (deleteconfirm == false)
+            {
+                return
+            }
             var xmlhttp = new XMLHttpRequest();
             var url = "http://student.business.uab.edu/webappservice/service1.svc/deleteStore/";
             //url += document.getElementById("deleteid").value;
