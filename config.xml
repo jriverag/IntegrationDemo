@@ -30,7 +30,7 @@
     
     <platform name="android">
         <icon src="sombrero.png" />
-        <splash src="sombrero.png" qualifier="mpdi" />
+        <splash src="sombrerosplash.png" />
     </platform>
 
 </widget>
