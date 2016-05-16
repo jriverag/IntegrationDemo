@@ -23,8 +23,8 @@
     <access origin="*" />
     
     <platform name="ios">
-        <icon src="sombrero.png" width="152" height="152" />
-        <splash src="sombrero.png" width="320" height="48" />
+        <icon src="sombrero152.png" width="152" height="152" />
+        <splash src="sombrerosplash.png" width="1024" height="768" />
     </platform>
     
     <platform name="android">
