@@ -18,10 +18,18 @@
         Julio C. Rivera 
     </author>
     
-    <icon src="images/sombrero.png" />
-    
     <preference name="phonegap-version" value="cli-6.1.0" />
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <access origin="*" />
+    
+    <platform name="ios">
+        <icon src="sombrero.png" width="180" height="180" />
+    </platform>
+    
+    <platform name="android">
+        <icon src="sombrero.png" />
+    </platform>
+    
+    <splash src="sombrero.png" />
 
 </widget>
