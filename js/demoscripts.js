@@ -52,6 +52,7 @@ function MenuSelect(selection)
             break;
         case "Store List":
             document.getElementById("storelist").style.visibility = "visible";
+            ListStores();
             break;
         case "Employee List":
             document.getElementById("employeelist").style.visibility = "visible";
@@ -154,6 +155,7 @@ function ListStores()
         var count = 0;
         var rowid = "oddrow";
         var storename = "";
+        var storeid = "";
         for(count = 0; count < result.GetAllStoresResult.length; count ++)
         {
             if (count%2 == 0)
@@ -167,7 +169,9 @@ function ListStores()
             storename = '<a id="clickable" onclick="Orders(' + "'" + result.GetAllStoresResult[count].StoreName + "'); return false;" + '"' + ">";
             storename += result.GetAllStoresResult[count].StoreName;
             storename += '</a>';
-            display += "<tr id=" + rowid + "><td>" + result.GetAllStoresResult[count].StoreID + "</td><td>" + storename + "</td><td>" + result.GetAllStoresResult[count].StoreCity + "</td></tr>";
+            storeid = '<button onclick="DeleteStore(' + result.GetAllStoresResult[count].StoreID + ')">Delete Store</button> ';
+            storeid += result.GetAllStoresResult[count].StoreID;
+            display += "<tr id=" + rowid + "><td>" + storeid + "</td><td>" + storename + "</td><td>" + result.GetAllStoresResult[count].StoreCity + "</td></tr>";
         }
         display += "</table>";
         document.getElementById("liststores").innerHTML = display;
@@ -209,6 +213,7 @@ function OperationResult(success, exception, displayObject)
     {
         case 1:
             displayObject.innerHTML = "The operation was successful!";
+            MenuSelect("Store List");
             break;
         case 0:
             displayObject.innerHTML = "The operation was not successful:<br>" + exception;
@@ -224,11 +229,12 @@ function OperationResult(success, exception, displayObject)
     }
 }
 
-function DeleteStore()
+function DeleteStore(storeid)
        {
             var xmlhttp = new XMLHttpRequest();
             var url = "http://student.business.uab.edu/webappservice/service1.svc/deleteStore/";
-            url += document.getElementById("deleteid").value;
+            //url += document.getElementById("deleteid").value;
+            url += storeid;
             var objdisplay = document.getElementById("deleteresult");
                         
             xmlhttp.onreadystatechange = function() {
@@ -241,6 +247,7 @@ function DeleteStore()
             }
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
+            ListStores();
         }
         
 function History()
