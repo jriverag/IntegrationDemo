@@ -19,6 +19,7 @@
     </author>
     
     <preference name="phonegap-version" value="cli-6.1.0" />
+    <preference name="SplashScreenDelay" value="10000" />
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <access origin="*" />
     
