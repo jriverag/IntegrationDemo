@@ -23,9 +23,9 @@
     <gap:plugin name="cordova-plugin-splashscreen" source="npm" />
     <access origin="*" />
     <preference name="SplashScreenDelay" value="5000" />
-    <splash src="res/screen/ios/self2xport.png" platform="ios" width="1536" height="2048" />
-    <splash src="res/scree/ios/self2xland" platform="ios" width="2048" height="1536" />
-    <splash src="splash.png" platform="android" density="port-mdpi" />
+    <gap:splash src="self2xport.png" platform="ios" width="1536" height="2048" />
+    <gap:splash src="self2xland" platform="ios" width="2048" height="1536" />
+    <gap:splash src="splash.png" platform="android" density="port-mdpi" />
     
     <platform name="ios">
         <icon src="sombrero152.png" width="152" height="152" />
