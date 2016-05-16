@@ -23,13 +23,13 @@
     <access origin="*" />
     
     <platform name="ios">
-        <icon src="sombrero.png" width="180" height="180" />
+        <icon src="sombrero.png" width="152" height="152" />
+        <splash src="sombrero.png" width="320" height="48" />
     </platform>
     
     <platform name="android">
         <icon src="sombrero.png" />
+        <splash src="sombrero.png" qualifier="mpdi" />
     </platform>
-    
-    <splash src="sombrero.png" />
 
 </widget>
