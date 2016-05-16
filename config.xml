@@ -19,18 +19,19 @@
     </author>
     
     <preference name="phonegap-version" value="cli-6.1.0" />
-    <preference name="SplashScreenDelay" value="50000" />
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <access origin="*" />
     
     <platform name="ios">
         <icon src="sombrero152.png" width="152" height="152" />
         <splash src="sombrerosplash.png" width="1024" height="768" />
+        <preference name="SplashScreenDelay" value="50000" />
     </platform>
     
     <platform name="android">
-        <icon src="sombrero.png" />
+        <icon src="sombrero152.png" width="152" height="152"/>
         <splash src="sombrerosplash.png" />
+        <preference name="SplashScreenDelay" value="50000" />
     </platform>
 
 </widget>
