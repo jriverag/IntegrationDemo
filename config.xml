@@ -19,7 +19,6 @@
     </author>
     
     <preference name="phonegap-version" value="cli-6.1.0" />
-    <preference name="exit-on-suspend" value="true" />
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <gap:plugin name="cordova-plugin-splashscreen" source="npm" />
     <access origin="*" />
@@ -30,6 +29,7 @@
     
     <platform name="ios">
         <icon src="sombrero152.png" width="152" height="152" />
+        <preference name="exit-on-suspend" value="true" />
     </platform>
     
     <platform name="android">
