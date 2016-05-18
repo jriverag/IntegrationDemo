@@ -25,6 +25,7 @@
             <option value="Delete an Employee">Delete an Employee</option>
             <option value="Delete a Store">Delete a Store</option>
             <option value="Store Orders">Store Orders</option>
+            <option value="Store Information">Store Information</option>
         </select>
         <button id="addstore" onclick="MenuSelect('Add a Store')">Add a Store</button>
         <hr>
@@ -245,6 +246,20 @@
             </tr>
         </table>
         <label id="deleteemployeeresult">The result will display here.</label>
+    </section>
+    <section id="storedata">
+        <h3>Store Information</h3>
+        <hr>
+        <label>Store ID: </label>
+        <input type="text" id="storeID">
+        <br>
+        <label>Store Name: </label>
+        <input type="text" id="storename">
+        <br>
+        <label>Store City: </label>
+        <input type="text" id="storecity">
+        <br>
+        <button onclick="StoreUpdate()">Update Store Information</button>
     </section>
 
 

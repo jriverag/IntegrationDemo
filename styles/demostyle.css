@@ -32,7 +32,6 @@ img {float: left; height: 40%; width: 25%; box-shadow: 10px 10px 5px 5px;}
 
 #deleteemployee {background-color: #FFCC99; overflow: scroll; visibility: hidden; position: absolute; height: 75%; width: 100%;}
 
-
 table {border: inset; padding: 10px; background-color: white; overflow: scroll;}
 
 #oddrow {background-color: #FFFFCC;}
@@ -44,3 +43,5 @@ table {border: inset; padding: 10px; background-color: white; overflow: scroll;}
 .warning {color: red;}
 
 .caption {text-align: right;}
+
+#storedata {background-color: #FFFFFF; overflow: scroll; visibility: hidden; position: absolute; height: 75%; width: 100%;}

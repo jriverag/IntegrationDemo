@@ -12,6 +12,7 @@ function MenuSelect(selection)
     document.getElementById("addemployee").style.visibility = "hidden";
     document.getElementById("changeemployee").style.visibility = "hidden";
     document.getElementById("deleteemployee").style.visibility = "hidden";
+    document.getElementById("storedata").style.visibility = "hidden";
     
     //var selection = document.getElementById("menuitems").value;
     
@@ -56,6 +57,10 @@ function MenuSelect(selection)
             break;
         case "Employee List":
             document.getElementById("employeelist").style.visibility = "visible";
+            break;
+        case "Store Information":
+            document.getElementById("storedata").style.visibility = "visible";
+            Display();
             break;
         default:
             alert("Please select a different menu option");
@@ -170,6 +175,7 @@ function ListStores()
             storename += result.GetAllStoresResult[count].StoreName;
             storename += '</a>';
             storeid = '<button onclick="DeleteStore(' + result.GetAllStoresResult[count].StoreID + ')">Delete Store</button> ';
+            storeid += '<button onclick="StoreInfo(' + result.GetAllStoresResult[count].StoreID + ')">Update Store</button> ';
             storeid += result.GetAllStoresResult[count].StoreID;
             display += "<tr id=" + rowid + "><td>" + storeid + "</td><td>" + storename + "</td><td>" + result.GetAllStoresResult[count].StoreCity + "</td></tr>";
         }
@@ -344,12 +350,13 @@ function StoreUpdate()
                     var outcome = result.WasSuccessful
                     var error = result.Exception;
                     OperationResult(outcome, error, objdisplay);
+                    MenuSelect("Store List");
                 }
         }    
         var url = "http://student.business.uab.edu/webappservice/service1.svc/updateStore";
-        var orderid = Number(document.getElementById("orderID").value);
-        var shipname = document.getElementById("shipName").value;
-        var shipcity = document.getElementById("shipCity").value;
+        var orderid = Number(document.getElementById("storeID").value);
+        var shipname = document.getElementById("storename").value;
+        var shipcity = document.getElementById("storecity").value;
                 
         var parameters = '{"StoreID":' + orderid + ',"StoreName":"' + shipname + '","StoreCity":"' + shipcity + '"}';
                 
@@ -437,7 +444,26 @@ function OrderList(item)
     MenuSelect("Store Orders");
 }
 
-function Display(item)
+function Display()
 {
-    alert("The item was clicked: " + item);
+    document.getElementById("storeID").value = "9999";
+}
+
+function StoreInfo(storeid)
+{
+    var xmlhttp = new XMLHttpRequest();
+            var url = "http://student.business.uab.edu/WebAppService/service1.svc/getStoreInfo/";
+            url += storeid;
+                        
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var output = JSON.parse(xmlhttp.responseText);
+                    document.getElementById("storeID").value = output.GetStoreInfoResult[0].StoreID;
+                    document.getElementById("storename").value = output.GetStoreInfoResult[0].StoreName;
+                    document.getElementById("storecity").value = output.GetStoreInfoResult[0].StoreCity;
+                }
+            }
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+            MenuSelect("Store Information");
 }
