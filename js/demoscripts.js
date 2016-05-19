@@ -467,3 +467,30 @@ function StoreInfo(storeid)
             xmlhttp.send();
             MenuSelect("Store Information");
 }
+
+function Location()
+{
+    var geo = navigator.geolocation;
+
+    if (geo)
+    {
+        geo.getCurrentPosition(showPosition);
+
+    }
+    else
+    {
+        alert("Geolocation is not supported");
+    }
+}
+
+function showPosition(position)
+{
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    document.getElementById("latitude").innerHTML = latitude;
+    document.getElementById("longitude").innerHTML = longitude;
+    
+    var latlong = latitude + ", " + longitude;
+    var img_url = "http://maps.googleapis.com/maps/api/staticmap?center=" + latlong + "&zoom=14&size=400x300&sensor-false";
+    document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
+}
