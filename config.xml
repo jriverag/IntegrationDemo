@@ -21,6 +21,7 @@
     <preference name="phonegap-version" value="cli-6.1.0" />
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <gap:plugin name="cordova-plugin-splashscreen" source="npm" />
+    <gap:plugin name="cordova-plugin-geolocation" source="npm" />
     <access origin="*" />
     <preference name="SplashScreenDelay" value="5000" />
     <gap:splash src="self2xport.png" gap:platform="ios" width="1536" height="2048" />
