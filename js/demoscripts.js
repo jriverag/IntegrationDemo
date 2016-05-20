@@ -500,9 +500,7 @@ function showPosition(position)
 
 function Photo()
 {
-    var Kodak = navigator.camera;
-    
-    Kodak.getPicture(KodakSuccess,KodakFail,JPEG);
+    navigator.camera.getPicture(KodakSuccess,KodakFail,JPEG);
     
     function KodakSuccess(imagedata)
     {
@@ -512,7 +510,7 @@ function Photo()
     
     function KodakFail(message)
     {
-        alert("CAmera Failure" + message);
+        alert("Camera Failure");
     }
 }
 
