@@ -498,3 +498,21 @@ function showPosition(position)
     
 }
 
+function Photo()
+{
+    var Kodak = navigator.camera;
+    
+    Kodak.getPicture(KodakSuccess,KodakFail,JPEG);
+    
+    function KodakSuccess(imagedata)
+    {
+        var image = document.getElementById("testpic");
+        image.src = "data:image/jpeg;base64," + imagedata;
+    }
+    
+    function KodakFail(message)
+    {
+        alert("CAmera Failure" + message);
+    }
+}
+
