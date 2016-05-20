@@ -491,6 +491,10 @@ function showPosition(position)
     document.getElementById("longitude").innerHTML = longitude;
     
     var latlong = latitude + ", " + longitude;
-    var img_url = "http://maps.googleapis.com/maps/api/staticmap?center=" + latlong + "&zoom=14&size=400x300&sensor-false";
+    
+    var img_url = "http://maps.googleapis.com/maps/api/staticmap?center=" + latlong + "&zoom=17&markers=color:red%7Clabel:S%7C" + latlong + "&size=800x600&sensor-false";
+
     document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
+    
 }
+
