@@ -1,38 +1,38 @@
-var picturesource;
-var destinationtype;
-
-document.addEventListener("deviceready",onDeviceReady,false);
-
-function onDeviceReady()
-{
-    picturesource = navigator.camera.PictureSourceType;
-    destinationtype = navigator.camera.DestinationType;
-}
-
-function onPhotoDataSuccess(imagedata)
-{
-    var smallImage = document.getElementById("smallImage");
-    smallImage.style.display = 'block';
-    smallImage.src = "data:image/jpeg;base64," + imageData;
-}
-
-function onPhotoURISuccess(imageURI)
-{
-    var largeImage = document.getElementById("largeImage");
-    largeImage.style.display = 'block';
-    largeImage.src = imageURI;
-}
-
-function CapturePhoto()
-{
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true, destinationtype: destinationtype.DATA_URL });
-    
-}
-
-function onFail(message)
-{
-    alert("Failed because: " + message);
-}
+//var picturesource;
+//var destinationtype;
+//
+//document.addEventListener("deviceready",onDeviceReady,false);
+//
+//function onDeviceReady()
+//{
+//    picturesource = navigator.camera.PictureSourceType;
+//    destinationtype = navigator.camera.DestinationType;
+//}
+//
+//function onPhotoDataSuccess(imagedata)
+//{
+//    var smallImage = document.getElementById("smallImage");
+//    smallImage.style.display = 'block';
+//    smallImage.src = "data:image/jpeg;base64," + imageData;
+//}
+//
+//function onPhotoURISuccess(imageURI)
+//{
+//    var largeImage = document.getElementById("largeImage");
+//    largeImage.style.display = 'block';
+//    largeImage.src = imageURI;
+//}
+//
+//function CapturePhoto()
+//{
+//    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true, destinationtype: destinationtype.DATA_URL });
+//    
+//}
+//
+//function onFail(message)
+//{
+//    alert("Failed because: " + message);
+//}
 
 function MenuSelect(selection)
 {
