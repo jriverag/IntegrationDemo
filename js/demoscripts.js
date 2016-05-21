@@ -1,39 +1,3 @@
-//var picturesource;
-//var destinationtype;
-//
-//document.addEventListener("deviceready",onDeviceReady,false);
-//
-//function onDeviceReady()
-//{
-//    picturesource = navigator.camera.PictureSourceType;
-//    destinationtype = navigator.camera.DestinationType;
-//}
-//
-//function onPhotoDataSuccess(imagedata)
-//{
-//    var smallImage = document.getElementById("smallImage");
-//    smallImage.style.display = 'block';
-//    smallImage.src = "data:image/jpeg;base64," + imageData;
-//}
-//
-//function onPhotoURISuccess(imageURI)
-//{
-//    var largeImage = document.getElementById("largeImage");
-//    largeImage.style.display = 'block';
-//    largeImage.src = imageURI;
-//}
-//
-//function CapturePhoto()
-//{
-//    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true, destinationtype: destinationtype.DATA_URL });
-//    
-//}
-//
-//function onFail(message)
-//{
-//    alert("Failed because: " + message);
-//}
-
 function MenuSelect(selection)
 {
     document.getElementById("about").style.visibility = "hidden";
@@ -49,13 +13,14 @@ function MenuSelect(selection)
     document.getElementById("changeemployee").style.visibility = "hidden";
     document.getElementById("deleteemployee").style.visibility = "hidden";
     document.getElementById("storedata").style.visibility = "hidden";
+    document.getElementById("location").style.visibility = "hidden";
     
     //var selection = document.getElementById("menuitems").value;
     
     switch (selection)
     {
         case "Home":
-            
+        
             break;
         case "About":
             document.getElementById("about").style.visibility = "visible";
@@ -97,6 +62,9 @@ function MenuSelect(selection)
         case "Store Information":
             document.getElementById("storedata").style.visibility = "visible";
             Display();
+            break;
+        case "Current Location":
+            document.getElementById("location").style.visibility = "visible";
             break;
         default:
             alert("Please select a different menu option");

@@ -4,44 +4,6 @@
 <head>
     <title>IS 633 Demostration Application</title>
     <link rel="stylesheet" type="text/css" href="styles/demostyle.css" />
-    <script type="text/javascript" charset="utf-8" src="cordova.js">
-        
-        var picturesource;
-var destinationtype;
-
-document.addEventListener("deviceready",onDeviceReady,false);
-
-function onDeviceReady()
-{
-    picturesource = navigator.camera.PictureSourceType;
-    destinationtype = navigator.camera.DestinationType;
-}
-
-function onPhotoDataSuccess(imagedata)
-{
-    var smallImage = document.getElementById("smallImage");
-    smallImage.style.display = 'block';
-    smallImage.src = "data:image/jpeg;base64," + imageData;
-}
-
-function onPhotoURISuccess(imageURI)
-{
-    var largeImage = document.getElementById("largeImage");
-    largeImage.style.display = 'block';
-    largeImage.src = imageURI;
-}
-
-function CapturePhoto()
-{
-    navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true, destinationtype: destinationtype.DATA_URL });
-    
-}
-
-function onFail(message)
-{
-    alert("Failed because: " + message);
-}
-    </script>
     <script src="js/demoscripts.js"></script>
 
 </head>
@@ -65,6 +27,7 @@ function onFail(message)
             <option value="Delete a Store">Delete a Store</option>
             <option value="Store Orders">Store Orders</option>
             <option value="Store Information">Store Information</option>
+            <option value="Current Location">Current Location</option>
         </select>
         <button id="addstore" onclick="MenuSelect('Add a Store')">Add a Store</button>
         <hr>
@@ -311,11 +274,6 @@ function onFail(message)
         <br>
         <button onclick="Location()">Find Location</button>
         <div id="map"></div>
-        <br>
-        <button onclick="CapturePhoto()">Take Picture</button>
-        <img id="smallImage" src-"" />
-        <img id="largeImage" src="" />
-        
     </section>
 
 
