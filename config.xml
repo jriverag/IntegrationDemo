@@ -19,7 +19,7 @@
     </author>
     
     <preference name="phonegap-version" value="cli-6.1.0" />
-    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
+<!--    <gap:plugin name="cordova-plugin-whitelist" source="npm" />-->
     <gap:plugin name="cordova-plugin-splashscreen" source="npm" />
     <gap:plugin name="cordova-plugin-geolocation" source="npm" />
     <gap:plugin name="cordova-plugin-camera" source="npm" />
