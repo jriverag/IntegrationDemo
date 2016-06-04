@@ -19,6 +19,7 @@
     </author>
     
     <preference name="phonegap-version" value="cli-6.1.0" />
+    <plugin name="cordova-plugin-whitelist" source="npm" />
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <plugin name="cordova-plugin-geolocation" source="npm" />
     <access origin="*" />
