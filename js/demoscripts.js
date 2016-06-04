@@ -15,8 +15,6 @@ function MenuSelect(selection)
     document.getElementById("storedata").style.visibility = "hidden";
     document.getElementById("location").style.visibility = "hidden";
     
-    //var selection = document.getElementById("menuitems").value;
-    
     switch (selection)
     {
         case "Home":

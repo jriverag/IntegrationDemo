@@ -19,15 +19,13 @@
     </author>
     
     <preference name="phonegap-version" value="cli-6.1.0" />
-<!--    <gap:plugin name="cordova-plugin-whitelist" source="npm" />-->
-    <gap:plugin name="cordova-plugin-splashscreen" source="npm" />
-    <gap:plugin name="cordova-plugin-geolocation" source="npm" />
-    <gap:plugin name="cordova-plugin-camera" source="npm" />
+    <plugin name="cordova-plugin-splashscreen" source="npm" />
+    <plugin name="cordova-plugin-geolocation" source="npm" />
     <access origin="*" />
     <preference name="SplashScreenDelay" value="5000" />
-    <gap:splash src="self2xport.png" gap:platform="ios" width="1536" height="2048" />
-    <gap:splash src="self2xland" gap:platform="ios" width="2048" height="1536" />
-    <gap:splash src="splash.png" gap:platform="android" density="port-mdpi" />
+    <splash src="self2xport.png" gap:platform="ios" width="1536" height="2048" />
+    <splash src="self2xland" gap:platform="ios" width="2048" height="1536" />
+    <splash src="splash.png" gap:platform="android" density="port-mdpi" />
     
     <platform name="ios">
         <icon src="sombrero152.png" width="152" height="152" />
