@@ -23,10 +23,12 @@
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <plugin name="cordova-plugin-geolocation" source="npm" />
     <access origin="*" />
+    <icon src="images/sombrero.png" />
+    <splash src="images/splash.png" />
     <preference name="SplashScreenDelay" value="5000" />
-    <splash src="images/self2xport.png" gap:platform="ios" width="1536" height="2048" />
-    <splash src="images/self2xland.png" gap:platform="ios" width="2048" height="1536" />
-    <splash src="images/splash.png" gap:platform="android" density="port-mdpi" />
+<!--    <splash src="images/self2xport.png" platform="ios" width="1536" height="2048" />
+    <splash src="images/self2xland.png" platform="ios" width="2048" height="1536" />
+    <splash src="images/splash.png" platform="android" density="port-mdpi" />
     
     <platform name="ios">
         <icon src="images/sombrero152.png" width="152" height="152" />
@@ -35,6 +37,6 @@
     
     <platform name="android">
         <icon src="images/sombrero152.png" width="152" height="152"/>
-    </platform>
+    </platform>-->
 
 </widget>
