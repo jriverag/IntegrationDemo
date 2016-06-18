@@ -173,7 +173,7 @@ function ListStores()
             {
                 rowid = "oddrow";
             }
-            storename = '<a id="clickable" onclick="Orders(' + "'" + result.GetAllStoresResult[count].StoreName + "'); return false;" + '"' + ">";
+            storename = '<a id="clickable" onclick="Orders(' + "'" + result.GetAllStoresResult[count].StoreID + "'); return false;" + '"' + ">";
             storename += result.GetAllStoresResult[count].StoreName;
             storename += '</a>';
             storeid = '<button onclick="DeleteStore(' + result.GetAllStoresResult[count].StoreID + ')">Delete Store</button> ';
@@ -307,9 +307,9 @@ function Orders(storename)
     {
         MenuSelect("Store Orders");
         var xmlhttp = new XMLHttpRequest();
-            var url = "http://student.business.uab.edu/WebAppService/service1.svc/getStoreSalesTotal/";
-            var blankposition = storename.search(" ");
-            storename = storename.substr(1,blankposition);
+            var url = "http://student.business.uab.edu/WebAppService/service1.svc/getOrderHistory/";
+            //var blankposition = storename.search(" ");
+            //storename = storename.substr(1,blankposition);
             url += storename; //document.getElementById("orderid").value;
                         
             xmlhttp.onreadystatechange = function() {
