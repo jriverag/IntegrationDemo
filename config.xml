@@ -23,8 +23,8 @@
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <plugin name="cordova-plugin-geolocation" source="npm" />
     <access origin="*" />
-    <icon src="images/sombrero.png" />
-    <splash src="images/splash.png" />
+    <icon src="icon.png" />
+    <splash src="splash.png" />
     <preference name="SplashScreenDelay" value="5000" />
 <!--    <splash src="images/self2xport.png" platform="ios" width="1536" height="2048" />
     <splash src="images/self2xland.png" platform="ios" width="2048" height="1536" />
