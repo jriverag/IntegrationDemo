@@ -28,7 +28,7 @@
     <preference name="SplashScreenDelay" value="5000" />
     <splash src="images/self2xport.png" platform="ios" width="1536" height="2048" />
     <splash src="images/self2xland.png" platform="ios" width="2048" height="1536" />
-    <splash src="images/splash.png" platform="android" density="port-mdpi" />
+    <splash src="splash.png" platform="android" density="port-mdpi" />
     
     <platform name="ios">
         <icon src="images/sombrero152.png" width="152" height="152" />
