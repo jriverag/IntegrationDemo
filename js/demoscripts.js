@@ -73,7 +73,7 @@ function MenuSelect(selection)
 function ListCustomers()
 {
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://student.business.uab.edu/WebAppService/service1.svc/getAllAuthors";
+    var url = "https://student.business.uab.edu/WebAppService/service1.svc/getAllAuthors";
              
     xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -109,7 +109,7 @@ function ListCustomers()
 function ListEmployees()
 {
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://student.business.uab.edu/WebAppService/service1.svc/getAllemployees";
+    var url = "https://student.business.uab.edu/WebAppService/service1.svc/getAllemployees";
              
     xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -145,7 +145,7 @@ function ListEmployees()
 function ListStores()
 {
     var xmlhttp = new XMLHttpRequest();
-    var url = "http://student.business.uab.edu/WebAppService/service1.svc/getAllStores";
+    var url = "https://student.business.uab.edu/WebAppService/service1.svc/getAllStores";
              
     xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -189,7 +189,7 @@ function ListStores()
 function CreateStore()
 {
     var objajax = new XMLHttpRequest();
-    var url = "http://student.business.uab.edu/webappservice/service1.svc/CreateStore";
+    var url = "https://student.business.uab.edu/webappservice/service1.svc/CreateStore";
     //customer data from web page
     var customerid = document.getElementById("custid").value;
     var customername = document.getElementById("custname").value;
@@ -249,7 +249,7 @@ function DeleteStore(storeid)
                 return
             }
             var xmlhttp = new XMLHttpRequest();
-            var url = "http://student.business.uab.edu/webappservice/service1.svc/deleteStore/";
+            var url = "https://student.business.uab.edu/webappservice/service1.svc/deleteStore/";
             //url += document.getElementById("deleteid").value;
             url += storeid;
             var objdisplay = document.getElementById("deleteresult");
@@ -270,7 +270,7 @@ function DeleteStore(storeid)
 function History()
             {
             var xmlhttp = new XMLHttpRequest();
-            var url = "http://student.business.uab.edu/WebAppService/service1.svc/getAuthorPubs/";
+            var url = "https://student.business.uab.edu/WebAppService/service1.svc/getAuthorPubs/";
             url += document.getElementById("historyid").value;
                         
             xmlhttp.onreadystatechange = function() {
@@ -307,7 +307,7 @@ function Orders(storename)
     {
         MenuSelect("Store Orders");
         var xmlhttp = new XMLHttpRequest();
-            var url = "http://student.business.uab.edu/WebAppService/service1.svc/getOrderHistory/";
+            var url = "https://student.business.uab.edu/WebAppService/service1.svc/getOrderHistory/";
             //var blankposition = storename.search(" ");
             //storename = storename.substr(1,blankposition);
             url += storename; //document.getElementById("orderid").value;
@@ -355,7 +355,7 @@ function StoreUpdate()
                     MenuSelect("Store List");
                 }
         }    
-        var url = "http://student.business.uab.edu/webappservice/service1.svc/updateStore";
+        var url = "https://student.business.uab.edu/webappservice/service1.svc/updateStore";
         var orderid = Number(document.getElementById("storeID").value);
         var shipname = document.getElementById("storename").value;
         var shipcity = document.getElementById("storecity").value;
@@ -370,7 +370,7 @@ function StoreUpdate()
 function CreateEmployee()
 {
     var objajax = new XMLHttpRequest();
-    var url = "http://student.business.uab.edu/webappservice/service1.svc/addEmployee";
+    var url = "https://student.business.uab.edu/webappservice/service1.svc/addEmployee";
     //customer data from web page
     var empid = document.getElementById("empid").value;
     var empfname = document.getElementById("empfname").value;
@@ -409,7 +409,7 @@ function EmployeeUpdate()
                     OperationResult(outcome, error, objdisplay);
                 }
         }    
-        var url = "http://student.business.uab.edu/webappservice/service1.svc/updateEmployee";
+        var url = "https://student.business.uab.edu/webappservice/service1.svc/updateEmployee";
         var empid = document.getElementById("empID").value;
         var empfname = document.getElementById("empFName").value;
         var empminit = document.getElementById("empmi").value;
@@ -425,7 +425,7 @@ function EmployeeUpdate()
 function DeleteEmployee()
        {
             var xmlhttp = new XMLHttpRequest();
-            var url = "http://student.business.uab.edu/webappservice/service1.svc/deleteEmployee/";
+            var url = "https://student.business.uab.edu/webappservice/service1.svc/deleteEmployee/";
             url += document.getElementById("deleteempid").value;
             var objdisplay = document.getElementById("deleteemployeeresult");
                         
@@ -454,7 +454,7 @@ function Display()
 function StoreInfo(storeid)
 {
     var xmlhttp = new XMLHttpRequest();
-            var url = "http://student.business.uab.edu/WebAppService/service1.svc/getStoreInfo/";
+            var url = "https://student.business.uab.edu/WebAppService/service1.svc/getStoreInfo/";
             url += storeid;
                         
             xmlhttp.onreadystatechange = function() {
@@ -494,7 +494,7 @@ function showPosition(position)
     
     var latlong = latitude + ", " + longitude;
     
-    var img_url = "http://maps.googleapis.com/maps/api/staticmap?center=" + latlong + "&zoom=17&markers=color:red%7Clabel:S%7C" + latlong + "&size=800x600&sensor-false";
+    var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlong + "&zoom=17&markers=color:red%7Clabel:S%7C" + latlong + "&size=800x600&sensor-false";
 
     document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";
     
