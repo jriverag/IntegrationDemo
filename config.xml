@@ -18,14 +18,9 @@
         Julio C. Rivera 
     </author>
     
-<<<<<<< HEAD
 
     <preference name="phonegap-version" value="cli-7.0.1" />
 
-
-=======
-    <preference name="phonegap-version" value="cli-6.5.0" />
->>>>>>> origin/master
     <plugin name="cordova-plugin-whitelist" source="npm" />
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <plugin name="cordova-plugin-geolocation" source="npm" />
