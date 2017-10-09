@@ -18,13 +18,15 @@
         Julio C. Rivera 
     </author>
     
-    <preference name="phonegap-version" value="cli-6.3.0" />
+
+    <preference name="phonegap-version" value="cli-7.0.1" />
+
+
     <plugin name="cordova-plugin-whitelist" source="npm" />
     <plugin name="cordova-plugin-splashscreen" source="npm" />
     <plugin name="cordova-plugin-geolocation" source="npm" />
     <access origin="*" />
-<!--    <icon src="icon.png" />
-    <splash src="splash.png" />-->
+
     <preference name="SplashScreenDelay" value="5000" />
     <splash src="images/self2xport.png" platform="ios" width="1536" height="2048" />
     <splash src="images/self2xland.png" platform="ios" width="2048" height="1536" />
@@ -39,3 +41,4 @@
         <icon src="icon.png" />
     </platform>
 
+</widget>
